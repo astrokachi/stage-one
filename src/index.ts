@@ -21,7 +21,7 @@ const server = http.createServer((req, res) => {
 		const resp = {
 			slack_name,
 			current_day: days[date.getDay()],
-			utc_time: date,
+			utc_time: date.toISOString().replace(".", ":"),
 			track,
 			github_file_url:
 				"https://github.com/astrokachi/stage-one/blob/main/src/index.ts",
@@ -29,7 +29,7 @@ const server = http.createServer((req, res) => {
 			status_code: 200,
 		};
 
-		res.writeHead(200, { "Content-Type": "text/plain" });
+		res.writeHead(200, { "Content-Type": "application/json" });
 		res.end(JSON.stringify(resp));
 	} else {
 		res.writeHead(404, { "Content-Type": "text/plain" });
