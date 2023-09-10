@@ -4,7 +4,7 @@ import url from "url";
 const server = http.createServer((req, res) => {
 	const parsedUrl = url.parse(req.url, true);
 
-	if (req.method === "GET" && parsedUrl.pathname === "/") {
+	if (req.method === "GET" && parsedUrl.pathname === "/api") {
 		const { slack_name, track } = parsedUrl.query;
 		const date = new Date();
 
