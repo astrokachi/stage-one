@@ -21,7 +21,7 @@ const server = http.createServer((req, res) => {
 		const resp = {
 			slack_name,
 			current_day: days[date.getDay()],
-			utc_time: date.toISOString().replace(".", ":"),
+			utc_time: date.toISOString().replace(/\.\d+/, ""),
 			track,
 			github_file_url:
 				"https://github.com/astrokachi/stage-one/blob/main/src/index.ts",
