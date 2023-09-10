@@ -1,0 +1,21 @@
+{
+	"name": "stage-one",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"clean": "rimraf dist/",
+		"prestart": "npm-run-all clean build copy-assets",
+		"start": "node dist/index.js",
+		"build": "tsc",
+		"dev": "nodemon src/index.ts"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/node": "^20.6.0",
+		"nodemon": "^3.0.1",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.2.2"
+	}
+}
